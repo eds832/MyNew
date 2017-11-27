@@ -14,10 +14,10 @@ public class HomeController {
 
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public ModelAndView index() {
-		ModelAndView modelandView = new ModelAndView();
+		ModelAndView modelAndView = new ModelAndView();
 		modelandView.setViewName("home.jsp");
 		
 		
-		return modelandView;
+		return modelAndView;
 	}
 }
