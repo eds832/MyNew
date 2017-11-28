@@ -26,6 +26,7 @@ public class Product extends Model{
 	private BigDecimal price;
 	
 	@ManyToOne
+	/*@Column(name="product_category_id")*/
 	private ProductCategory productCategory;
 
 	public Product() {

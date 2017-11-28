@@ -15,7 +15,7 @@ public class HomeController {
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("home.jsp");
+		modelAndView.setViewName("home");
 		
 		
 		return modelAndView;

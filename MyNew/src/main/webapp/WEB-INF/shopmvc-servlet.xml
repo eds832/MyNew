@@ -36,6 +36,44 @@
 
 	<context:property-placeholder location="classpath:application.properties" />
 
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<list>
+				<value>edu.shop.java.model</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.connection.charSet">UTF-8</prop>
+				<prop key="hibernate.hbm2ddl.show_sql">true</prop>
+				<prop key="hibernate.enable_lazy_load_no_trans">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/shop" />
+		<property name="username" value="root" />
+		<property name="password" value="12345" />
+		<property name="initialSize" value="5" />
+		<property name="maxActive" value="10" />
+		<property name="maxIdle" value="5" />
+		<property name="minIdle" value="2" />
+	</bean>
+
 	<security:http pattern="/css/**" security="none" />
 	<security:http pattern="/images/**" security="none" />
 	<security:http pattern="/js/**" security="none" />
@@ -59,7 +97,7 @@
 
 	<security:authentication-manager>
 		<security:authentication-provider
-			user-service-ref="userAuthorityService">
+			user-service-ref="userService">
 			<security:password-encoder ref="passwordHelper" />
 		</security:authentication-provider>
 	</security:authentication-manager>
@@ -67,7 +105,7 @@
 	<bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
 		<property name="rolePrefix" value="" />
 	</bean>
-	
+
 	<!-- Internationalization and Localization -->
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
