@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -26,7 +27,7 @@ public class Product extends Model{
 	private BigDecimal price;
 	
 	@ManyToOne
-	/*@Column(name="product_category_id")*/
+	@JoinColumn(name="product_category_id")
 	private ProductCategory productCategory;
 
 	public Product() {
