@@ -28,56 +28,56 @@
 				<version>2.6</version>
 				<configuration>
 					<encoding>${project.build.sourceEncoding}</encoding>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
-	<dependency>
+		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
 			<version>2.3.2-b02</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/javax.servlet.jsp.jstl-api -->
 		<dependency>
 			<groupId>javax.servlet.jsp.jstl</groupId>
 			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
 			<version>1.2.1</version>
 		</dependency>
-	
-  		<!-- SERVLETS AND VIEWS -->
-	  	<dependency>
-	  		<groupId>javax.servlet</groupId>
-	  		<artifactId>javax.servlet-api</artifactId>
-	  		<version>3.1.0</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>jstl</groupId>
-	  		<artifactId>jstl</artifactId>
-	  		<version>1.2</version>
-	  	</dependency>
-  	
-  		<!-- LOGGING -->
-  		<dependency>
-	  		<groupId>org.slf4j</groupId>
-	  		<artifactId>slf4j-api</artifactId>
-	  		<version>1.7.2</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>org.slf4j</groupId>
-	  		<artifactId>slf4j-log4j12</artifactId>
-	  		<version>1.7.2</version>
-	  	</dependency>
-	  	
-	  	<!-- TESTING -->
-  		<dependency>
-	  		<groupId>junit</groupId>
-	  		<artifactId>junit</artifactId>
-	  		<version>4.11</version>
-	  	</dependency>
-	  	
-	  	<!-- SPRINGFRAMEWORK -->
+
+		<!-- SERVLETS AND VIEWS -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- LOGGING -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+
+		<!-- TESTING -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+		</dependency>
+
+		<!-- SPRINGFRAMEWORK -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -119,9 +119,9 @@
 			<version>4.0.2.RELEASE</version>
 		</dependency>
 		<dependency>
-   		 	<groupId>org.springframework</groupId>
-  		 	<artifactId>spring-web</artifactId>
- 		   	<version>4.2.0.RELEASE</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>4.2.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -133,58 +133,58 @@
 			<artifactId>spring-orm</artifactId>
 			<version>4.2.0.RELEASE</version>
 		</dependency>
-	  	
-	  	<!-- DATABASE -->
-	  	<dependency>
-	  		<groupId>mysql</groupId>
-	  		<artifactId>mysql-connector-java</artifactId>
-	  		<version>5.1.35</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>org.apache.tomcat</groupId>
-	  		<artifactId>tomcat-jdbc</artifactId>
-	  		<version>8.5.0</version>
-	  	</dependency>
-	  	
-	  	<!-- HIBERNATE -->
-	  	<dependency>
-	  		<groupId>org.hibernate</groupId>
-	  		<artifactId>hibernate-core</artifactId>
-	  		<version>4.2.0.Final</version>
-	  	</dependency>  
-	  	<dependency>
-	  		<groupId>cglib</groupId>
-	  		<artifactId>cglib-nodep</artifactId>
-	  		<version>2.2</version>
-	  	</dependency>  
-	  	<dependency>
+
+		<!-- DATABASE -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.35</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jdbc</artifactId>
+			<version>8.0.26</version>
+		</dependency>
+
+		<!-- HIBERNATE -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.2.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
 			<version>3.18.2-GA</version>
 		</dependency>
-	  	
-	  	<!-- EMAIL -->
-	  	<dependency>
-	  		<groupId>javax.mail</groupId>
-	  		<artifactId>javax.mail-api</artifactId>
-	  		<version>1.5.3</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>javax.mail</groupId>
-	  		<artifactId>mail</artifactId>
-	  		<version>1.4.7</version>
-	  	</dependency>
-	  	
-	  	<!-- VALIDATION -->
-	  	<dependency>
-	  		<groupId>javax.validation</groupId>
-	  		<artifactId>validation-api</artifactId>
-	  		<version>1.1.0.Final</version>
-	  	</dependency>
-	  	<dependency>
-	  		<groupId>org.hibernate</groupId>
-	  		<artifactId>hibernate-validator</artifactId>
-	  		<version>5.2.1.Final</version>
-	  	</dependency>  	
-  </dependencies>  
+
+		<!-- EMAIL -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>javax.mail-api</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+		<!-- VALIDATION -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.2.1.Final</version>
+		</dependency>
+	</dependencies>
 </project>

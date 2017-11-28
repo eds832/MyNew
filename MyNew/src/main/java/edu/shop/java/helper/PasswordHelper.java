@@ -78,6 +78,7 @@ public class PasswordHelper implements PasswordEncoder {
 
     @Override
     public boolean matches(CharSequence rawPassword, String encodedPassword) {
+    	//System.err.println(rawPassword + " " + encode(rawPassword) + " " + encodedPassword);
         return encode(rawPassword).equals(encodedPassword);
     }
 }

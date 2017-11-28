@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
@@ -17,7 +19,7 @@ public class Role extends Model{
 	private static final long serialVersionUID = -5976460990786078925L;
 
 	@NotNull
-	@Min(value=4)
+	@Enumerated(EnumType.STRING)
 	@Column(name="title", length=25, insertable=false, updatable=false)
 	private RoleList title;
 	

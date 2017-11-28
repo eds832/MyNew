@@ -11,7 +11,7 @@
 
 	<form action="<c:url value="/auth.htm"/>" method="POST">
 		<input type="hidden" name="_spring_security_remember_me" value="true"/>
-		<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 		<div>
 			<label>Username: </label>
 			<input type="text" name="username" value="" placeholder="Your name"/>
@@ -24,6 +24,7 @@
 			<input type="submit" name="login" value="Log in"/>
 		</div>
 	</form>
+	
 	
 	<p>
 		<c:if test="${param.error == 'invalidLoginPassword'}">

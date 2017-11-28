@@ -17,7 +17,7 @@ import edu.shop.java.model.User;
 public class UserService implements UserDetailsService{
 	
 	@Autowired()
-	@Qualifier(value="userFileDao")
+	@Qualifier(value="userDatabaseDao")
 	private UserDao userDao;
 	
 	public UserService() {
@@ -29,6 +29,7 @@ public class UserService implements UserDetailsService{
 		return userDao.getAll();
 	}
 
+	@Transactional
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userDao.getByUsername(username);
